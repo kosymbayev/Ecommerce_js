@@ -1,0 +1,81 @@
+basket_color = var(--background_color)
+
+.basket .container
+    margin 30px auto
+    table
+        width 100%
+        border-collapse collapse
+    th
+        text-align left
+        padding 5px
+        color #fff
+        background basket_color
+        font-weight normal
+    td
+        padding 10px 5px
+        input
+            width 40px
+            height 30px
+            padding 5px
+        a.remove
+            color basket_color
+            font-size 12px
+
+    // BASKET ITEMS
+    .basket_item_info
+        display flex
+        flex-wrap wrap
+
+    .basket_item_img
+        display flex
+        justify-content center
+        align-items center
+        width 100px
+        height 100px
+        min-width 100px
+        min-height 100px
+        margin-right 10px
+        img
+            max-width 100px
+            max-height 100px
+            width auto
+            height auto
+
+    .basket_item_name p
+        margin 0
+
+    .basket_item_info_block{}
+    .basket_item_price{}
+    .basket_item_remove{}
+
+    // TOTAL
+    .total_price
+        display flex
+        justify-content flex-end
+        table
+            border-top 3px solid basket_color
+            width 100%
+            max-width 400px
+    td
+    th
+        &:last-child
+            text-align right
+
+    // EMPTY BASKET
+    .basket_empty
+        display: flex;
+        flex-direction column
+        justify-content: center;
+        align-items: center;
+        padding: 50px 0;
+        a
+            background: #555;
+            color: #fff;
+            padding: 4px 18px;
+            border-radius: 30px;
+            text-transform: uppercase;
+            margin-top: 10px;
+                
+    @media only screen and (max-width: 600px)
+        p
+            display none

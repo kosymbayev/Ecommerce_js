@@ -1,0 +1,82 @@
+.basket .container {
+  margin: 30px auto;
+}
+.basket .container table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.basket .container th {
+  text-align: left;
+  padding: 5px;
+  color: #fff;
+  background: var(--background_color);
+  font-weight: normal;
+}
+.basket .container td {
+  padding: 10px 5px;
+}
+.basket .container td input {
+  width: 40px;
+  height: 30px;
+  padding: 5px;
+}
+.basket .container td a.remove {
+  color: var(--background_color);
+  font-size: 12px;
+}
+.basket .container .basket_item_info {
+  display: flex;
+  flex-wrap: wrap;
+}
+.basket .container .basket_item_img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  min-width: 100px;
+  min-height: 100px;
+  margin-right: 10px;
+}
+.basket .container .basket_item_img img {
+  max-width: 100px;
+  max-height: 100px;
+  width: auto;
+  height: auto;
+}
+.basket .container .basket_item_name p {
+  margin: 0;
+}
+.basket .container .total_price {
+  display: flex;
+  justify-content: flex-end;
+}
+.basket .container .total_price table {
+  border-top: 3px solid var(--background_color);
+  width: 100%;
+  max-width: 400px;
+}
+.basket .container td:last-child,
+.basket .container th:last-child {
+  text-align: right;
+}
+.basket .container .basket_empty {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 0;
+}
+.basket .container .basket_empty a {
+  background: #555;
+  color: #fff;
+  padding: 4px 18px;
+  border-radius: 30px;
+  text-transform: uppercase;
+  margin-top: 10px;
+}
+@media only screen and (max-width: 600px) {
+  .basket .container p {
+    display: none;
+  }
+}

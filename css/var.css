@@ -1,0 +1,22 @@
+:root 
+{
+    --border_radius: 3px;
+
+    --background_color: rgba(32, 33, 35, 0.93);
+    --text_color: #555
+}
+
+/* WEBKIT SCROLL BAR */
+::-webkit-scrollbar 
+{
+    width: 8px;
+}
+::-webkit-scrollbar-thumb 
+{
+    background-color: var(--color_dark);
+	border-radius: 5px;
+}
+::-webkit-scrollbar-track 
+{
+    background-color: var(--color_white);
+}
