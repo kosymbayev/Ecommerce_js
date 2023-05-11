@@ -1,21 +1,20 @@
-.products .container {
+.catalog .container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 20px;
-  margin: var(--spacing_large) auto;
 }
 @media screen and (max-width: 1000px) and (min-width: 701px) {
-  .products .container {
+  .catalog .container {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 @media screen and (max-width: 700px) and (min-width: 461px) {
-  .products .container {
+  .catalog .container {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 @media screen and (max-width: 460px) {
-  .products .container {
+  .catalog .container {
     grid-template-columns: 1fr;
   }
 }

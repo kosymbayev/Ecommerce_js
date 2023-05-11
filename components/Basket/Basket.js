@@ -4,6 +4,25 @@ class Basket {
     {
         ROOT_BASKET.innerHTML = '';
     }
+
+    deleteLocationStorage(element, id)
+    {
+        const { pushProduct, products } = localStorageUtil.putProducts(id)
+
+        if( pushProduct )
+        {
+            element.classList.add(this.classNameActve);
+            element.innerHTML = this.labelRemove;
+        }
+        else
+        {
+            element.classList.remove(this.classNameActve);
+            element.innerHTML = this.labelAdd;
+        }
+
+        headerPage.render(products.length)
+    }
+
     render()
     {
         let htmlCatalog = '';
@@ -24,10 +43,10 @@ class Basket {
                                     <img src="${img}" alt="">
                                 </a>
                                 <div class="basket_item_info_block">
-                                    <a href="product-detail.html" class="basket_item_name"><p>${name}</p></a>
+                                    <a href="#" class="basket_item_name"><p>${name}</p></a>
                                     <small class="basket_item_price">Price: $${price.toLocaleString()}</small>
                                     <br>
-                                    <a href="" class="basket_item_remove remove">Remove</a>
+                                    <a href="" class="basket_item_remove remove" onclick="basketPage.deleteLocationStorage(this, '${id}')";>Remove</a>
                                 </div>
                             </div>
                         </td>
@@ -82,5 +101,5 @@ class Basket {
     }
 }
 
-const BasketPage = new Basket();
-BasketPage.render();
+const basketPage = new Basket();
+basketPage.render();

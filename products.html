@@ -5,8 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="icon" type="image/png" href="img/favicon.png">
-
     <title>All Products | JS Ecommerce</title>
 
     <link rel="stylesheet" href="css/var.css">
@@ -15,7 +13,7 @@
 <body>
 
     <div id="header" class="header"></div>
-    <div id="products" class="products"></div>
+    <div id="products" class="products catalog"></div>
 
     <!-- Constants and Utilits -->
     <script src="const/catalog.js"></script>
@@ -28,6 +26,9 @@
     
     <!-- Products -->
     <script src="components/Products/Products.js"></script>
+    <script>
+        productsPage.render(ROOT_PRODUCTS, CATALOG, 'all', 'All products');
+    </script>
     <link rel="stylesheet" href="components/Products/Products.css">
     
 </body>

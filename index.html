@@ -5,30 +5,50 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="icon" type="image/png" href="img/favicon.png">
-
     <title>JS Ecommerce</title>
 
     <link rel="stylesheet" href="css/var.css">
     <link rel="stylesheet" href="css/general.css">
+
+    <!-- Swiper -->
+    <link rel="stylesheet" href="plugin/swiper-bundle.min.css">
 </head>
 <body>
-
+    <!-- Swiper -->
+    <script src="plugin/swiper-bundle.min.js"></script>
+    
     <div id="header" class="header"></div>
-    <div id="products" class="products"></div>
+    <div id="banner" class="banner"></div>
+    <div id="bestsellers" class="bestsellers catalog"></div>
+    <div id="new_collection" class="new_collection catalog"></div>
 
     <!-- Constants and Utilits -->
     <script src="const/catalog.js"></script>
+    <script src="const/banner.js"></script>
     <script src="const/root.js"></script>
     <script src="utils/localStorageUtil.js"></script>
-
+    
     <!-- Header -->
     <script src="components/Header/Header.js"></script>
     <link rel="stylesheet" href="components/Header/Header.css">
+
+    <!-- Banner -->
+    <script src="components/Banner/Banner.js"></script>
+    <link rel="stylesheet" href="components/Banner/Banner.css">
     
     <!-- Products -->
-    <script src="components/Products/Products.js"></script>
     <link rel="stylesheet" href="components/Products/Products.css">
+    <script src="components/Products/Products.js"></script>
+    
+    <!-- Bestsellers -->
+    <script>
+        productsPage.render(ROOT_BESTSELLERS, CATALOG, 'bestseller', 'Bestsellers');
+    </script>
+
+    <!-- New collection -->
+    <script>
+        productsPage.render(ROOT_NEW_COLLECTION, CATALOG, 'new_collection', 'New collection');
+    </script>
     
 </body>
 </html>

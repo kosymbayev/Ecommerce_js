@@ -27,11 +27,21 @@ class Header
                     <img src="img/cart.png" alt="basket" width='30px' height='30px'>
                     <span class="menu_basket_count">${count}</span>
                 </a>
-                <img src="img/menu.png" alt="menu" class="menu_icon" onclick="menuToggle()">
+                <img src="img/menu.png" alt="menu" class="menu_icon" onclick="headerPage.menuToggle()">
             </div>
         `;
 
         ROOT_HEADER.innerHTML = html;
+    }
+
+    menuToggle() {
+        const menuItems = document.getElementById('menuItems');
+
+        if (menuItems.style.maxHeight === '0px') {
+            menuItems.style.maxHeight = '200px';
+        } else {
+            menuItems.style.maxHeight = '0px';
+        }
     }
 }
 
@@ -41,19 +51,6 @@ const productsStore = localStorageUtil.getProducts()
 
 headerPage.render(productsStore.length);
 
-
-var menuItems = document.getElementById('menuItems');
+// FUNCTION
 
 menuItems.style.maxHeight = '0px';
-
-function menuToggle()
-{
-    if( menuItems.style.maxHeight == '0px' )
-    {
-        menuItems.style.maxHeight = '200px';
-    }
-    else
-    {
-        menuItems.style.maxHeight = '0px';
-    }
-}
