@@ -21,9 +21,9 @@ class Banner
                     <div class="swiper-wrapper">
                         ${htmlBanner}
                     </div>
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button-next banner_swiper-button-next"></div>
+                    <div class="swiper-button-prev banner_swiper-button-prev"></div>
+                    <div class="swiper-pagination banner_swiper-pagination"></div>
                 </div>
             </div>
         `;
@@ -37,15 +37,14 @@ const bannerPage = new Banner();
 bannerPage.render();
 
 var swiper = new Swiper(".banner_swiper", {
-    cssMode: true,
     grabCursor: true,
     navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
+        nextEl: ".banner_swiper-button-next",
+        prevEl: ".banner_swiper-button-prev",
     },
     loop: true,
     pagination: {
-        el: ".swiper-pagination",
+        el: ".banner_swiper-pagination",
         clickable: true,
     },
     keyboard: true,
