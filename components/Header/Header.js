@@ -1,10 +1,5 @@
 class Header
 {
-    handleOpenShoppingPage()
-    {
-        BasketPage.render();
-    }
-
     render(count)
     {
         const html = `

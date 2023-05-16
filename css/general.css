@@ -18,7 +18,7 @@ a {
   color: var(--text_color);
 }
 .container {
-  max-width: 1460px;
+  max-width: var(--container-width);
   padding: 0 20px;
   margin: 0 auto;
 }

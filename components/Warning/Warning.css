@@ -1,0 +1,12 @@
+.warning {
+  background: #000;
+  color: #fff;
+}
+.warning a {
+  color: #fff;
+  text-decoration: underline;
+}
+.warning .container {
+  padding-top: 6px;
+  padding-bottom: 6px;
+}

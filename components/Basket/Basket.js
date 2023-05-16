@@ -70,7 +70,7 @@ class Basket {
                     <th>Quantity</th>
                     <th>Subtotal</th>
                 </tr>
-                        ${htmlCatalog}
+                ${htmlCatalog}
             </table>
         
             <div class="total_price">

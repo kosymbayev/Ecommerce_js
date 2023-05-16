@@ -6,7 +6,7 @@ class Products
         this.labelAdd = 'Add to Cart';
         this.labelRemove = 'Remove from Cart';
         this.currentPage = 1; // Текущая страница
-        this.itemsPerPage = 8; // Количество элементов на странице
+        this.itemsPerPage = 4; // Количество элементов на странице
     }
     
 
@@ -16,15 +16,16 @@ class Products
     
         if (pushProduct) 
         {
-            element.classList.add(this.classNameActve);
+            element.classList.add(this.classNameActive);
             element.innerHTML = this.labelRemove;
         } 
         else 
         {
-            element.classList.remove(this.classNameActve);
+            element.classList.remove(this.classNameActive);
             element.innerHTML = this.labelAdd;
         }
     
+        /* Нет смысла ведь на этой странице не будут повторяться товары
         // Находим все элементы продукта с соответствующим идентификатором
         const productElements = document.querySelectorAll(`[data-product-id="${id}"]`);
     
@@ -34,15 +35,15 @@ class Products
     
             if (pushProduct) 
             {
-                buttonElement.classList.add(this.classNameActve);
+                buttonElement.classList.add(this.classNameActive);
                 buttonElement.innerHTML = this.labelRemove;
             } 
             else 
             {
-                buttonElement.classList.remove(this.classNameActve);
+                buttonElement.classList.remove(this.classNameActive);
                 buttonElement.innerHTML = this.labelAdd;
             }
-        });
+        });*/
     
         headerPage.render(products.length);
     }
@@ -92,7 +93,7 @@ class Products
                             <span class='product_price'>
                                 ${price.toLocaleString()} USD
                             </span>
-                            <button class='product_btn ${activeClass}' onclick='productsPage.handleSetLocationStorage(this, "${id}");'>${activeText}</button>
+                            <button class='product_btn ${activeClass}' onclick='allProductsPage.handleSetLocationStorage(this, "${id}");'>${activeText}</button>
                         </div>
                     `;
                 }
@@ -114,18 +115,29 @@ class Products
     
     renderPagination(totalItems) 
     {
-        const totalPages = Math.ceil(totalItems / this.itemsPerPage); // Общее количество страниц
+        const totalPages = Math.ceil(totalItems / this.itemsPerPage);
         let paginationHtml = '';
-    
-        for (let i = 1; i <= totalPages; i++) {
-            const activeClass = i === this.currentPage ? 'active' : '';
-            paginationHtml += `<span class='page ${activeClass}' onclick='productsPage.changePage(${i})'>${i}</span>`;
+
+        if (this.currentPage > 1)
+        {
+            paginationHtml += `<span class='page' onclick='allProductsPage.changePage(${this.currentPage - 1})'>←</span>`;
         }
-    
+
+        for (let i = 1; i <= totalPages; i++)
+        {
+            paginationHtml += `<span class='page ${i === this.currentPage ? 'active' : ''}' onclick='allProductsPage.changePage(${i})'>${i}</span>`;
+        }
+
+        if (this.currentPage < totalPages)
+        {
+            paginationHtml += `<span class='page' onclick='allProductsPage.changePage(${this.currentPage + 1})'>→</span>`;
+        }
+
         return paginationHtml;
     }
     
-    changePage(page) {
+    changePage(page) 
+    {
         this.currentPage = page;
         this.render(ROOT_PRODUCTS, CATALOG, 'all', 'All products');
     }
