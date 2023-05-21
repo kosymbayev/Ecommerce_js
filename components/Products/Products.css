@@ -1,23 +1,28 @@
-.catalog .container {
+.all_products .container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 20px;
 }
 @media screen and (max-width: 1000px) and (min-width: 701px) {
-  .catalog .container {
+  .all_products .container {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 @media screen and (max-width: 700px) and (min-width: 461px) {
-  .catalog .container {
+  .all_products .container {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 @media screen and (max-width: 460px) {
-  .catalog .container {
+  .all_products .container {
     grid-template-columns: 1fr;
   }
 }
+.all_products,
+.catalog {
+  position: relative;
+}
+.all_products .product,
 .catalog .product {
   display: flex;
   flex-direction: column;
@@ -27,20 +32,29 @@
   box-shadow: 0px 0px 20px #d9d8d8;
   border-radius: var(--border_radius);
 }
+.all_products .product_name,
 .catalog .product_name {
   margin-bottom: auto;
   font-weight: bold;
+  height: 3.75em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box !important;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
 }
+.all_products .product_img,
 .catalog .product_img {
   width: 100%;
-  height: 270px;
   object-fit: contain;
   margin-top: 15px;
 }
+.all_products .product_price,
 .catalog .product_price {
   margin-top: 15px;
   color: #808080;
 }
+.all_products .product_btn,
 .catalog .product_btn {
   margin-top: 15px;
   padding: 10px 15px;
@@ -52,11 +66,13 @@
   font-family: inherit;
   font-size: inherit;
 }
+.all_products .product_btn.active,
 .catalog .product_btn.active {
   border: 1px solid transparent;
   background: #555;
   color: #fff;
 }
+.all_products .pagination,
 .catalog .pagination {
   max-width: var(--container-width);
   padding: 0 20px;
@@ -64,6 +80,7 @@
   display: flex;
   gap: 10px;
 }
+.all_products .pagination .page,
 .catalog .pagination .page {
   display: inline-block;
   border: 1px solid #555;
@@ -73,9 +90,37 @@
   line-height: 40px;
   cursor: pointer;
 }
+.all_products .pagination .page.active,
 .catalog .pagination .page.active,
+.all_products .pagination .page:hover,
 .catalog .pagination .page:hover,
+.all_products .pagination .page:active,
 .catalog .pagination .page:active {
   background: #555;
   color: #fff;
+}
+@media screen and (max-width: 480px) {
+  .catalog {
+    padding-bottom: 20px;
+  }
+}
+.catalog.swiper,
+.catalog .swiper,
+.catalog .swiper-container {
+  overflow: visible;
+}
+@media screen and (min-width: 481px) {
+  .catalog .swiper-pagination {
+    top: -54px;
+    bottom: unset;
+    left: unset;
+    right: 0;
+    width: auto;
+  }
+}
+@media screen and (max-width: 480px) {
+  .catalog .swiper-pagination {
+    top: unset;
+    bottom: -30px;
+  }
 }

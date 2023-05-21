@@ -40,10 +40,10 @@ class Products
     /*
     target - the block where everything will fall (from const/root.js)
     catalog - products from array (from const/catalog.js)
-    sticker_filter - filter for special category like bestsellers
+    stickerFilter - filter for special category like bestsellers
     title
     */
-    render(target, catalog, sticker_filter, title)
+    render(target, catalog, stickerFilter, title, swiperId)
     {
         const productsStore = localStorageUtil.getProducts();// Класс для работы с local storage
         let htmlCatalog = '';
@@ -62,10 +62,10 @@ class Products
                 activeText = this.labelRemove;
             }
 
-            if( sticker.includes(sticker_filter) || sticker_filter == 'all')
+            if( sticker.includes(stickerFilter) || stickerFilter == 'all')
             {
                 htmlCatalog += `
-                <div class='product' data-product-id='${id}'>
+                <div class='product swiper-slide' data-product-id='${id}'>
                     <span class='product_name'>${name}</span>
                     <img class='product_img' src='${img}'>
                     <span class='product_price'>
@@ -80,7 +80,14 @@ class Products
         const html = `
             <h2>${title}</h2>
             <div class='container'>
-                ${htmlCatalog}
+                <div class="swiper ${swiperId}_swiper">
+                    <div class="swiper-wrapper">
+                        ${htmlCatalog}
+                    </div>
+                    <div class="swiper-button-next ${swiperId}_swiper-button-next"></div>
+                    <div class="swiper-button-prev ${swiperId}_swiper-button-prev"></div>
+                    <div class="swiper-pagination ${swiperId}_swiper-pagination"></div>
+                </div>
             </div>
         `;
 
@@ -89,3 +96,106 @@ class Products
 }
 
 const productsPage = new Products()
+
+window.addEventListener('load', function() 
+{
+    // BESTSELLERS 
+    var bestsellersSwiper = new Swiper(".bestsellers_swiper", {
+        grabCursor: true,
+        slidesPerView: 1,
+        spaceBetween: 0,
+        navigation: {
+            nextEl: ".bestsellers_swiper-button-next",
+            prevEl: ".bestsellers_swiper-button-prev",
+        },
+        pagination: {
+            el: ".bestsellers_swiper-pagination",
+            clickable: true,
+        },
+        breakpoints: 
+        {
+            1036:
+            {
+                slidesPerView: 4,
+                spaceBetween: 20,
+            },
+            760:
+            {
+                slidesPerView: 3,
+                spaceBetween: 20,
+            },
+            440:
+            {
+                slidesPerView: 2,
+                spaceBetween: 20,
+            },
+        },
+    });
+
+    // NEW COLLECTIONS 
+    var new_collectionsSwiper = new Swiper(".new_collections_swiper", {
+        grabCursor: true,
+        slidesPerView: 1,
+        spaceBetween: 20,
+        navigation: {
+            nextEl: ".new_collections_swiper-button-next",
+            prevEl: ".new_collections_swiper-button-prev",
+        },
+        pagination: {
+            el: ".new_collections_swiper-pagination",
+            clickable: true,
+        },
+        breakpoints: 
+        {
+            1036:
+            {
+                slidesPerView: 4,
+                spaceBetween: 20,
+            },
+            760:
+            {
+                slidesPerView: 3,
+                spaceBetween: 20,
+            },
+            440:
+            {
+                slidesPerView: 2,
+                spaceBetween: 20,
+            },
+        },
+    });
+
+    // T-SHIRTS 
+    var tShirtsSwiper = new Swiper(".t-shirts_swiper", {
+        grabCursor: true,
+        slidesPerView: 1,
+        spaceBetween: 20,
+        navigation: {
+            nextEl: ".t-shirts_swiper-button-next",
+            prevEl: ".t-shirts_swiper-button-prev",
+        },
+        pagination: {
+            el: ".t-shirts_swiper-pagination",
+            clickable: true,
+        },
+        breakpoints: 
+        {
+            1036:
+            {
+                slidesPerView: 4,
+                spaceBetween: 20,
+            },
+            760:
+            {
+                slidesPerView: 3,
+                spaceBetween: 16,
+            },
+            440:
+            {
+                slidesPerView: 2,
+                spaceBetween: 10,
+            },
+        },
+    });
+
+});

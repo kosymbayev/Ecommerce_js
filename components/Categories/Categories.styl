@@ -1,0 +1,55 @@
+// CATEGORIES
+.categories
+    .container
+        display: grid
+        grid-template-columns: repeat(3, minmax(100px, 500px))
+        gap 20px
+
+    .categories_item
+        position relative
+        width auto
+        display: flex;
+        &:after
+            content: attr(data-desc)
+            position absolute
+            left 0
+            right 0
+            top 0
+            bottom 0
+            background: #555
+            opacity 0
+            color: #fff
+            display: flex
+            justify-content: center
+            align-items: center
+            transition: opacity 0.2s
+        &:hover:after
+            opacity 0.85
+
+
+    .categories_item_link
+        width auto
+        display: flex;
+        background: #555;
+        color #fff
+        font-size: 4vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    img
+        width -webkit-fill-available
+        height auto
+
+    @media screen and (min-width: 681px)
+        .categories_item:after
+            font-size 2.5vw
+        .categories_item_link
+            display: none
+
+    @media screen and (max-width: 680px)
+        .container
+            grid-template-columns: repeat(2, minmax(100px, 500px))
+
+        .categories_item:after
+            font-size 4vw

@@ -36,7 +36,7 @@ const bannerPage = new Banner();
 
 bannerPage.render();
 
-var swiper = new Swiper(".banner_swiper", {
+var bannersSwiper = new Swiper(".banner_swiper", {
     grabCursor: true,
     navigation: {
         nextEl: ".banner_swiper-button-next",

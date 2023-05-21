@@ -20,8 +20,11 @@
     <div id="warning" class="warning"></div>
     <div id="header" class="header"></div>
     <div id="banner" class="banner"></div>
-    <div id="bestsellers" class="bestsellers catalog"></div>
+    <div id="bestsellers" class="bestsellers catalog swiper"></div>
+    <div id="categories" class="categories"></div>
     <div id="new_collection" class="new_collection catalog"></div>
+    <div id="t-shirts" class="t-shirts catalog"></div>
+    <div id="seo" class="seo"></div>
 
     <!-- Constants and Utilits -->
     <script src="const/catalog.js"></script>
@@ -40,6 +43,10 @@
     <!-- Banner -->
     <script src="components/Banner/Banner.js"></script>
     <link rel="stylesheet" href="components/Banner/Banner.css">
+
+    <!-- Categories -->
+    <script src="components/Categories/Categories.js"></script>
+    <link rel="stylesheet" href="components/Categories/Categories.css">
     
     <!-- Products -->
     <link rel="stylesheet" href="components/Products/Products.css">
@@ -47,13 +54,22 @@
     
     <!-- Bestsellers -->
     <script>
-        productsPage.render(ROOT_BESTSELLERS, CATALOG, 'bestseller', 'Bestsellers');
+        productsPage.render(ROOT_BESTSELLERS, CATALOG, 'bestseller', 'Bestsellers', 'bestsellers');
     </script>
 
     <!-- New collection -->
     <script>
-        productsPage.render(ROOT_NEW_COLLECTION, CATALOG, 'new_collection', 'New collection');
+        productsPage.render(ROOT_NEW_COLLECTION, CATALOG, 'new_collection', 'New collection', 'new_collections');
     </script>
+
+    <!-- T-shirts -->
+    <script>
+        productsPage.render(ROOT_T_SHIRTS, CATALOG_T_SHIRTS, 'all', 'T-shirts', 't-shirts');
+    </script>
+
+    <!-- Seo -->
+    <script src="components/Seo/Seo.js"></script>
+    <link rel="stylesheet" href="components/Seo/Seo.css">
     
 </body>
 </html>

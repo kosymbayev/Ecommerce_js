@@ -1,3 +1,25 @@
+// CATEGORIES
+const CATALOG_CATEGORIES = 
+[
+    {
+        id: 't-shirts',
+        img: 'https://cyberpunkmerch.store/wp-content/uploads/2022/10/cyberpunk-T-SHIRTS.jpg',
+        title: 'T-shirts',
+        description: 'Buy t-shirts ›',
+    },
+    {
+        id: 'hoodies',
+        img: 'https://cyberpunkmerch.store/wp-content/uploads/2022/10/cyberpunk-HOODIES.jpg',
+        title: 'Hoodies',
+        description: 'Buy hoodies ›',
+    },
+    {
+        id: 'cases',
+        img: 'https://cyberpunkmerch.store/wp-content/uploads/2022/10/cyberpunk-CASES.jpg',
+        title: 'Cases',
+        description: 'Buy cases ›',
+    },
+];
 // T_SHIRTS
 const CATALOG_T_SHIRTS = 
 [

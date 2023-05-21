@@ -1,4 +1,5 @@
-.catalog//all_products
+// ALL PRODUCTS PAGE
+.all_products
     .container
         display: grid
         grid-template-columns repeat(4, 1fr)
@@ -10,8 +11,10 @@
         @media screen and (max-width: 460px)
             grid-template-columns 1fr
 
+// PRODUCT ITEM
+.all_products
 .catalog
-    // PRODUCT ITEM
+    position relative
     .product
         display: flex
         flex-direction: column
@@ -24,10 +27,16 @@
     .product_name
         margin-bottom auto
         font-weight bold
+        height: 3.75em;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box !important;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
 
     .product_img
         width 100%
-        height 270px
+        //height 270px
         object-fit: contain
         margin-top 15px
 
@@ -71,3 +80,28 @@
             &:active
                 background #555
                 color #fff
+
+// CATALOGS
+.catalog
+    @media screen and (max-width: 480px) 
+        padding-bottom: 20px;
+    
+// SWIPER
+.catalog 
+    &.swiper
+    .swiper
+    .swiper-container
+        overflow: visible
+
+    @media screen and (min-width: 481px)
+        .swiper-pagination
+            top: -54px;
+            bottom: unset;
+            left: unset;
+            right: 0;
+            width auto
+
+    @media screen and (max-width: 480px)
+        .swiper-pagination
+            top: unset;
+            bottom: -30px;

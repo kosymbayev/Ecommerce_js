@@ -1,0 +1,17 @@
+.seo .seo_block {
+  max-height: 7.5em;
+  overflow: hidden;
+  transition: max-height 0.5s;
+}
+.seo .seo_block.open {
+  max-height: 700px;
+}
+.seo .seo_btn {
+  text-align: center;
+  margin: 10px auto;
+  width: 100%;
+  cursor: pointer;
+}
+.seo .seo_btn span {
+  border-bottom: 1px dashed #000;
+}
